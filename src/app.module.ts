@@ -8,10 +8,12 @@ import { TodoController } from './todo/todo.controller';
 import { TodoService } from './todo/todo.service';
 import { CommonModule } from './todo/commonModule/commonModule';
 import { GenerateIDService } from './todo/commonModule/commonModule.service';
+import { DiversModule } from './divers/divers.module';
+import { DiversController } from './divers/divers.controller';
 
 @Module({
-  imports: [PremierModule, TodoModule, CommonModule],
-  controllers: [AppController, PremierController, TodoController],
+  imports: [PremierModule, TodoModule, CommonModule, DiversModule],
+  controllers: [AppController, PremierController, TodoController, DiversController],
   providers: [AppService, TodoService, GenerateIDService],
 })
 export class AppModule {}
