@@ -42,8 +42,8 @@ export class TodoService {
         else throw new NotFoundException('Todo not found already!');
     } 
 
-    updateTodo(updateTodoDto:UpdateTodoDto):any {
-        var obj= this.todos.find(x=> x.id==x.id)
+    updateTodo(id: string, updateTodoDto:UpdateTodoDto):any {
+        var obj= this.todos.find(x=> x.id==id);
         if (!obj) throw new NotFoundException('Todo not found to be updated!');
         obj.name= updateTodoDto.name??obj.name;
         obj.description=  updateTodoDto.description ?? obj.description;
